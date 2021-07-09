@@ -1,6 +1,0 @@
-# helloWorldTaka
-
-# helloWorldMatu
-test
-
-ooooooo
