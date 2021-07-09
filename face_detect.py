@@ -1,5 +1,13 @@
 import cv2
 import cv2 as cv
+import configparser
+
+#import os
+#print(os.path.exists('config.ini'))
+#ディレクトリは気をつけてください
+
+config_ini = configparser.ConfigParser()
+config_ini.read('config.ini', encoding='utf-8')
 
 if __name__ == '__main__':
     # 定数定義
@@ -13,7 +21,7 @@ if __name__ == '__main__':
     DEVICE_ID = 0
 
     # 分類器の指定
-    cascade_file = "haarcascade_frontalface_alt2.xml"
+    cascade_file = config_ini['FILE']['CascadeFile']
     
     cascade = cv2.CascadeClassifier(cascade_file)
 
