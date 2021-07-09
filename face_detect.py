@@ -1,4 +1,5 @@
 import cv2
+import cv2 as cv
 
 if __name__ == '__main__':
     # 定数定義
@@ -32,7 +33,7 @@ if __name__ == '__main__':
 
         # 画像の取得と顔の検出
         img = c_frame
-        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        img_gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         face_list = cascade.detectMultiScale(img_gray, minSize=(100, 100))
 
         # 検出した顔に印を付ける
@@ -40,11 +41,11 @@ if __name__ == '__main__':
             color = (0, 0, 225)
             pen_w = 3
             cv2.rectangle(img_gray, (x, y), (x+w, y+h), color, thickness = pen_w)
+            cv2.putText(img_gray, 'HEY!!!!!', (x, y), cv.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 5, cv.LINE_AA)
 
         # フレーム表示
         cv2.imshow(ORG_WINDOW_NAME, c_frame)
         cv2.imshow(GAUSSIAN_WINDOW_NAME, img_gray)
-
         # Escキーで終了
         key = cv2.waitKey(INTERVAL)
         if key == ESC_KEY:
