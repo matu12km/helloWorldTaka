@@ -12,7 +12,7 @@ if __name__ == '__main__':
     DEVICE_ID = 0
 
     # 分類器の指定
-    cascade_file = "C:/Users/takeuchi sho/Desktop/kaisha/OpenCV_stady/opencv-master/opencv-master/data/haarcascades/haarcascade_frontalface_alt2.xml"
+    cascade_file = "haarcascade_frontalface_alt2.xml"
     
     cascade = cv2.CascadeClassifier(cascade_file)
 
